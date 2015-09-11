@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,9 +38,11 @@
 			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-				<li><a href="#head" class="active">Home</a></li>
-				<li><a href="/cadastroEntidadeUm/">Cadastro de produto</a></li>
-				<li><a href="/cadastroEntidadeDois/">Cadastro de fornecedor</a></li>
+                            <li><a href="#head" class="active">Home</a></li>
+                            
+                            <li><s:a action="registraProduto" class="btn btn-default btn-lg">Cadastro Produto</s:a></li>
+                            
+                            <li><a href="/cadastroEntidadeDois/">Cadastro de fornecedor</a></li>
 	
 			</ul>
 		</div>
@@ -62,8 +65,8 @@
 				
 				
 				<!-- Nice place to describe your site in a sentence or two -->
-				<p><a href="/cadastroEntidadeUm/" class="btn btn-default btn-lg">Cadastro Produto</a></p>
-                <p><a href="/cadastroEntidadeDois/" class="btn btn-default btn-lg">Cadastro Fornecedor</a></p>
+				<p><s:a action="selectAction" class="btn btn-default btn-lg">Cadastro Produto</s:a></p>
+                                <p><a href="/cadastroEntidadeDois/" class="btn btn-default btn-lg">Cadastro Fornecedor</a></p>
 	
 			</div> <!-- /col -->
 		</div> <!-- /row -->

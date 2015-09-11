@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: marcelo -->
+ 
+<struts>
+    <!-- Add your configuration elements here -->
+    <package name="default" extends="struts-default">
+        <!--<action name="selectAction" 
+            class="actions.BuscaFornecedorAction" method="display">
+            <result name="none">/cadastro_produto.jsp</result>
+        </action>-->
+        <!-- <action name="Login" class="LoginAction">
+            <result name="success">/sucesso.jsp</result>
+            <result name="error">/erro.jsp</result>
+        </action> -->
+    </package>
+</struts>
