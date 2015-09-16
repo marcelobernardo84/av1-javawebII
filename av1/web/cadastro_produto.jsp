@@ -15,14 +15,13 @@
     <body>
         <h1>Produtos:</h1>
         <s:form action="cadastroProduto" method="post">
-            <s:textfield name="campo1" label="Campo1:"/>
-            <s:textfield name="campo2" label="Campo2:"/>
-            <s:textfield name="campo3" label="Campo3:"/>
-            <s:textfield name="campo4" label="Campo4:"/>
-            <s:select label="Fornecedor" 
+            <s:textfield name="codigo" label="Codigo :"/>
+            <s:textfield name="nome" label="Nome :"/>
+            <s:textfield name="tipo" label="Tipo :"/>            
+            <s:select label="Fornecedor: " 
 		headerKey="-1" headerValue="Select Fornecedor"
 		list="buscaFornecedor" 
-		name="listaBuscaFornecedor"/>
+		name="id_fornecedor"/>
             <s:submit value="Enviar"/>
         </s:form>
     </body>

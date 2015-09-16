@@ -5,55 +5,98 @@
  */
 package entity;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author marcelo
  */
-public class Produto {
-    private String campo1; // DELETEME - ID
-    private String campo2;
-    private String campo3;
-    private String campo4;
-    private String campo5;
+@Entity
+@Table(name = "produto")
+public class Produto implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "codigo")
+    private String codigo;
+    @Column(name = "nome")
+    private String nome;
+    @Column(name = "tipo")
+    private String tipo;
+    @Column(name = "id_fornecedor")
+    private Long id_fornecedor;
 
-    public String getCampo1() {
-        return campo1;
+    public Long getId() {
+        return id;
     }
 
-    public void setCampo1(String campo1) {
-        this.campo1 = campo1;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getCampo2() {
-        return campo2;
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
     }
 
-    public void setCampo2(String campo2) {
-        this.campo2 = campo2;
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Produto)) {
+            return false;
+        }
+        Produto other = (Produto) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
 
-    public String getCampo3() {
-        return campo3;
+    @Override
+    public String toString() {
+        return "entity.Produto[ id=" + id + " ]";
     }
 
-    public void setCampo3(String campo3) {
-        this.campo3 = campo3;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public String getCampo4() {
-        return campo4;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-    public void setCampo4(String campo4) {
-        this.campo4 = campo4;
+    public String getNome() {
+        return nome;
     }
 
-    public String getCampo5() {
-        return campo5;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setCampo5(String campo5) {
-        this.campo5 = campo5;
-    }   
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Long getId_fornecedor() {
+        return id_fornecedor;
+    }
+
+    public void setId_fornecedor(Long id_fornecedor) {
+        this.id_fornecedor = id_fornecedor;
+    }
     
 }

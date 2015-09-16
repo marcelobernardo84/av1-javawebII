@@ -66,7 +66,7 @@
 				
 				<!-- Nice place to describe your site in a sentence or two -->
 				<p><s:a action="selectAction" class="btn btn-default btn-lg">Cadastro Produto</s:a></p>
-                                <p><a href="/cadastroEntidadeDois/" class="btn btn-default btn-lg">Cadastro Fornecedor</a></p>
+                                <p><s:a href="cadastro_fornecedor.jsp" class="btn btn-default btn-lg">Cadastro Fornecedor</s:a></p>
 	
 			</div> <!-- /col -->
 		</div> <!-- /row -->

@@ -5,30 +5,69 @@
  */
 package entity;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author marcelo
  */
-public class Fornecedor {
+@Entity
+@Table(name = "fornecedor")
+public class Fornecedor implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
     
-    private String campo1; //DELETEME = ID
-    private String campo2;
+    @Column(name = "nome")
+    private String nome;
 
-    public String getCampo1() {
-        return campo1;
+    public Long getId() {
+        return id;
     }
 
-    public void setCampo1(String campo1) {
-        this.campo1 = campo1;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getCampo2() {
-        return campo2;
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
     }
 
-    public void setCampo2(String campo2) {
-        this.campo2 = campo2;
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Fornecedor)) {
+            return false;
+        }
+        Fornecedor other = (Fornecedor) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
-    
+
+    @Override
+    public String toString() {
+        return "entity.Fornecedor[ id=" + id + " ]";
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = "teste";
+    }
     
 }

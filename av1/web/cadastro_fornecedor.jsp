@@ -4,7 +4,9 @@
     Author     : marcelo
 --%>
 
+<%@taglib prefix="s" uri="/struts-tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +14,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Fornecedor:</h1>
+        <s:form action="cadastroFornecedor" method="post">
+            <s:textfield name="nome" label="Nome"/>
+            <s:submit value="Enviar"/>
+        </s:form>
     </body>
 </html>
